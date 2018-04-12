@@ -61,10 +61,12 @@ class HomeController extends Controller
     public function ubah($id)
     {
         echo 'Ubah Pass';
+        echo Auth::user()->id;
     }
 
     public function setting()
     {
-        echo 'setting';
+        $users = DB::table('users')->paginate(10);
+        return view('/setting', compact('users'));
     }
 }
