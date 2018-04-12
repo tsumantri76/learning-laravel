@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/ubah/{id}', 'HomeController@ubah')->name('ubah_pass');
+Route::get('/setting', 'HomeController@setting')->name('setting');
+Route::post('/simpan', 'HomeController@simpan')->name('simpan');
